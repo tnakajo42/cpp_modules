@@ -6,16 +6,16 @@
 #    By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 14:43:44 by tnakajo           #+#    #+#              #
-#    Updated: 2024/10/30 18:59:23 by tnakajo          ###   ########.fr        #
+#    Updated: 2025/01/29 10:15:19 by tnakajo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		phonebook
-SRC =		main.cpp
-OBJ =		$(SRC:.cpp=.o)
-RM =		rm -f
-CPP =		c++
-CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
+NAME		= phonebook
+SRC			= main.cpp
+OBJ			= $(SRC:.cpp=.o)
+RM			= rm -f
+CPP			= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

@@ -1,35 +1,69 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:47:26 by tnakajo           #+#    #+#             */
-/*   Updated: 2024/10/23 15:58:41 by tnakajo          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// ************************************************************************** //
+//                                                                            //
+//                Account.hpp for GlobalBanksters United                //
+//                Created on  : Thu Nov 20 19:43:15 1989                      //
+//                Last update : Wed Jan 04 14:54:06 1992                      //
+//                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
+//                                                                            //
+// ************************************************************************** //
 
-#include <iostream>
 
-int main(int ac, char **av)
-{
-	int	i;
-	int	j;
+#pragma once
+#ifndef __ACCOUNT_H__
+#define __ACCOUNT_H__
 
-	i = 0;
-	if (ac < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	while (ac > 1 && av[i])
-	{
-		j = 0;
-		while (i > 0 && av[i][j])
-		{
-			std::cout << (char)std::toupper(av[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << "\n"; // std::cout << std::endl;
-	return (0);
-}
+// ************************************************************************** //
+//                               Account Class                                //
+// ************************************************************************** //
+
+class Account {
+
+
+public:
+
+	typedef Account		t;
+
+	static int	getNbAccounts( void );
+	static int	getTotalAmount( void );
+	static int	getNbDeposits( void );
+	static int	getNbWithdrawals( void );
+	static void	displayAccountsInfos( void );
+
+	Account( int initial_deposit );
+	~Account( void );
+
+	void	makeDeposit( int deposit );
+	bool	makeWithdrawal( int withdrawal );
+	int		checkAmount( void ) const;
+	void	displayStatus( void ) const;
+
+
+private:
+
+	static int	_nbAccounts;
+	static int	_totalAmount;
+	static int	_totalNbDeposits;
+	static int	_totalNbWithdrawals;
+
+	static void	_displayTimestamp( void );
+
+	int				_accountIndex;
+	int				_amount;
+	int				_nbDeposits;
+	int				_nbWithdrawals;
+
+	Account( void );
+
+};
+
+
+
+// ************************************************************************** //
+// vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
+// -*- indent-tabs-mode:t;                                                   -*-
+// -*- mode: c++-mode;                                                       -*-
+// -*- fill-column: 75; comment-column: 75;                                  -*-
+// ************************************************************************** //
+
+
+#endif /* __ACCOUNT_H__ */

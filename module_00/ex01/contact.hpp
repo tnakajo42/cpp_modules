@@ -6,130 +6,150 @@
 /*   By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:02:05 by tnakajo           #+#    #+#             */
-/*   Updated: 2024/10/30 19:02:59 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/01/29 16:54:28 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-
 # include <iostream>
 # include <iomanip>
+using namespace std;
 
 class	Contact
 {   
-    private:
-    int          _index;
-    std::string _firstName;
-    std::string _lastName;
-    std::string _nickName;
-    std::string _phoneNumber;
-    std::string _darkestSecret;
+	private:
+		int		_index;
+		string	_firstName;
+		string	_lastName;
+		string	_nickName;
+		string	_phoneNumber;
+		string	_secretInfo;
 
-    public:
-    Contact() : _index(0) {}
+	public:
+		Contact() : _index(0) {}
 
-    bool input_digit(std::string string) {
-        for (int i = 0; string[i] != 0;  ++i) {
-            if (!isdigit(string[i])) {
-                return false;
-            }
-        }
-        return true;
-    }
+		bool inputDigit(string string)
+		{
+			for (int i = 0; string[i] != 0;  ++i)
+			{
+				if (!isdigit(string[i]))
+					return false;
+			}
+			return true;
+		}
 
-    bool input_alph(std::string string) {
-        for (int i = 0; string[i] != 0;  ++i) {
-            if (!isalpha(string[i])) {
-                return false;
-            }
-        }
-        return true;
-    }
+		bool checkAlpha(string string)
+		{
+			for (int i = 0; string[i] != 0;  ++i)
+			{
+				if (!isalpha(string[i]))
+					return false;
+			}
+			return true;
+		}
 
-    void setIndex(int Index) {
-        _index = Index;
-    }
+		void setIndex(int Index)
+		{
+			_index = Index;
+		}
 
-    void setFirstName() {
-        do {
-            std::cout << "Enter first name: ";
-            getline(std::cin, _firstName);
-            if (_firstName.empty()) {
-                std::cout << "Input shall not be empty\n";
-            }
-            if (!input_alph(_firstName)) {
-                std::cout << "Input must be alphabet\n";
-            }
-        } while (!input_alph(_firstName) || _firstName.empty());
-    }
+		void setFirstName()
+		{
+			while (42)
+			{
+				cout << "Enter first name: ";
+				getline(cin, _firstName);
+				if (_firstName.empty())
+					cout << "No empty input, please.\n";
+				else if (!checkAlpha(_firstName))
+					cout << "Input must be alphabet.\n";
+				else
+					break ;
+			}
+		}
 
-    void setLastName() {
-        do {
-            std::cout << "Enter last name: ";
-            getline(std::cin, _lastName);
-            if (!input_alph(_lastName)) {
-                std::cout << "Input must be alphabet\n";
-            }
-        } while (!input_alph(_lastName));
-    }
+		void setLastName()
+		{
+			while(42)
+			{
+				cout << "Enter last name: ";
+				getline(cin, _lastName);
+				if (_lastName.empty())
+					cout << "No empty input, please.\n";
+				else if (!checkAlpha(_lastName))
+					cout << "Input must be alphabet.\n";
+				else
+					break ;
+			}
+		}
 
-    void setNickName() {
-            std::cout << "Enter nickname: ";
-            getline(std::cin, _nickName);
-    }
+		void setNickName()
+		{
+			cout << "Enter nickname: ";
+			getline(cin, _nickName);
+		}
 
-    void setPhoneNumber() {
-        do {
-            std::cout << "Enter phone number: ";
-            getline(std::cin, _phoneNumber);
-            if (_phoneNumber.empty()) {
-                std::cout << "Input shall not be empty\n";
-            }
-            if (!input_digit(_phoneNumber)) {
-            std::cout << "Input must be number\n";
-            }
-        } while (!input_digit(_phoneNumber) || _phoneNumber.empty());
-        
-    }
-    
-    void setDarkestSecret() {
-        std::cout << "Enter darkest secret: ";
-        getline(std::cin, _darkestSecret);
-    }
+		void setPhoneNumber()
+		{
 
-    void display() {
-        std::cout << "First Name: " << _firstName << std::endl;
-        std::cout << "Last Name: " << _lastName << std::endl;
-        std::cout << "Nickname: " << _nickName << std::endl;
-        std::cout << "Phone Number: " << _phoneNumber << std::endl;
-        std::cout << "Darkest Secret: " << _darkestSecret << std::endl; 
-        std::cout << "\n";
-    }
+			while(42)
+			{
+				cout << "Enter phone number: ";
+				getline(cin, _phoneNumber);
+				if (_phoneNumber.empty())
+					cout << "No empty input, please.\n";
+				else if (!inputDigit(_phoneNumber))
+					cout << "Input must be number.\n";
+				else
+					break ;
+			}
+		}
 
-    int getIndex() {
-        return _index;
-    }
+		void setDarkestSecret()
+		{
+			cout << "Enter darkest secret: ";
+			getline(cin, _secretInfo);
+		}
 
-    std::string getFirstName() {
-        return _firstName;
-    }
+		void displayContact()
+		{
+			cout << "First Name: " << _firstName << endl;
+			cout << "Last Name: " << _lastName << endl;
+			cout << "Nickname: " << _nickName << endl;
+			cout << "Phone Number: " << _phoneNumber << endl;
+			cout << "Darkest Secret: " << _secretInfo << endl;
+		}
 
-    std::string getLastName() {
-        return _lastName;
-    }
+		int getIndex()
+		{
+			return _index;
+		}
 
-    std::string getNickName() {
-        return _nickName;
-    }
+		string getFirstName()
+		{
+			return _firstName;
+		}
 
-    std::string getPhoneNumber() {
-        return _phoneNumber;
-    }
+		string getLastName()
+		{
+			return _lastName;
+		}
 
-    std::string getDarkestSecret() {
-        return _darkestSecret;
-    }
+		string getNickName()
+		{
+			return _nickName;
+		}
+
+		string getPhoneNumber()
+		{
+			return _phoneNumber;
+		}
+
+		string getSecretInfo()
+		{
+			return _secretInfo;
+		}
 };
 
 #endif
