@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:04:29 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/15 18:42:56 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/24 14:50:41 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ int	main(void) {
 	ScavTrap pikachu("Pikachu");
 
     unsigned int thunderbolt = pikachu.setAttackDamage(20);
+	charizard.highFivesGuys();
+
+	cout << endl;
+
+	pikachu.guardGate();
+
+	cout << endl;
+	
+	return 0;
+}
+
+/*
 
 	cout << "\n[Battle 1] " << endl;
 
@@ -76,13 +88,4 @@ int	main(void) {
 		pikachu.takeDamage(charizard.getAttackDamage());
 			
 
-
-	cout << endl;
-
-	pikachu.guardGate();
-
-	cout << endl;
-	
-
-	return 0;
-}
+*/

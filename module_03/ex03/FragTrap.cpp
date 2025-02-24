@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:08:09 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/15 21:10:37 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/17 17:17:51 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-    std::cout << "FragTrap " << _name << " has be born to 42.";
+    _hitpoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
+    std::cout << "FragTrap " << this->_name << " has be born to 42.";
     std::cout << std::endl;
 }
 
@@ -24,7 +27,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     _hitpoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-    std::cout << "FragTrap " << _name << " has appeared.";
+    std::cout << "FragTrap " << this->_name << " has appeared.";
     std::cout << std::endl;
 }
 
@@ -58,3 +61,19 @@ void FragTrap::highFivesGuys(void)
     }
     std::cout << "FragTrap " << _name << " high fives everyone! 🖐️" << std::endl;
 }
+
+unsigned int FragTrap::getAttackDamage(void) const
+{
+    return (_attackDamage);
+}
+
+unsigned int FragTrap::getEnergyPoints(void) const
+{
+    return (_energyPoints);
+}
+
+unsigned int FragTrap::getHitpoints(void) const
+{
+    return (_hitpoints);
+}
+

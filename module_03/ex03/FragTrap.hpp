@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:08:03 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/15 20:37:35 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/18 16:25:48 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 class FragTrap : virtual public ClapTrap // virtual keyword added
 {
-private:
-
 public:
     FragTrap(void); // default constructor
     FragTrap(std::string name); // constructor with name parameter
@@ -25,4 +23,8 @@ public:
     ~FragTrap(); // destructor
 
     void highFivesGuys(void);
+
+    virtual unsigned int getAttackDamage(void) const;
+    virtual unsigned int getEnergyPoints(void) const;
+    virtual unsigned int getHitpoints(void) const;
 };

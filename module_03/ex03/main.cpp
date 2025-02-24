@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:04:29 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/15 21:19:18 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/16 20:05:44 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ int	main(void) {
 
 	cout << endl;
 
+	mewtwo.attack("🔴Charizard");
+	charizard.attack("🟡Pikachu");
+	pikachu.attack("🟣Mewtwo");
+
+	cout << endl;
+
+	mewtwo.beRepaired(0);
+	charizard.beRepaired(0);
+	pikachu.beRepaired(0);
+
+	/*
 	unsigned int thunderbolt = pikachu.setAttackDamage(20);
 	unsigned int ember = charizard.setAttackDamage(6);
 	unsigned int psychic = mewtwo.setAttackDamage(50);
@@ -108,7 +119,7 @@ int	main(void) {
 	mewtwo.whoAmI(); // NEW
 
 	cout << endl;
-	
+	*/	
 
 	return 0;
 }

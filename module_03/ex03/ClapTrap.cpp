@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:24:49 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/15 21:20:32 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/17 16:50:43 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,17 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energyPoint
     std::cout << "ClapTrap " << _name << " has appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
+// ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
+// {
+//     *this = _ClapTrap;
+//     std::cout << "copy constructor called" << std::endl;
+// }
+
+ClapTrap::ClapTrap(const ClapTrap &_ClapTrap) 
+    : _name(_ClapTrap._name), _hitpoints(_ClapTrap._hitpoints), 
+      _energyPoints(_ClapTrap._energyPoints), _attackDamage(_ClapTrap._attackDamage)
 {
-    *this = _ClapTrap;
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &_ClapTrap)
@@ -104,10 +111,9 @@ unsigned int	ClapTrap::getAttackDamage(void) const
     return (this->_attackDamage);
 }
 
-unsigned int	ClapTrap::setAttackDamage(unsigned int amount)
+void	ClapTrap::setAttackDamage(unsigned int amount)
 {
     this->_attackDamage = amount;
-    return (this->_attackDamage);
 }
 
 // std::string	ClapTrap::getName(void) const
