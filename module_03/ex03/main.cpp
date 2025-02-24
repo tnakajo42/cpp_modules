@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:04:29 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/16 20:05:44 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/02/24 14:58:02 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ int	main(void) {
 	ScavTrap pikachu("🟡Pikachu");
 
 	cout << endl;
+
+/**
+ScavTrap:
+	_hitpoints = 95;
+	_energyPoints = 50;	-> DiamondTrap
+	_attackDamage = 20;
+FrageTrap:
+    _hitpoints = 100;	-> DiamondTrap
+    _energyPoints = 100; 
+    _attackDamage = 30;	-> DiamondTrap
+ */
 
 	mewtwo.attack("🔴Charizard");
 	charizard.attack("🟡Pikachu");
