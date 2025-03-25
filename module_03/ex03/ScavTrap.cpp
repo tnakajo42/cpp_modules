@@ -6,26 +6,25 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:04:32 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/02/17 17:23:26 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/03/25 20:03:47 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->_hitpoints = 95;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 } 
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_hitpoints = 95;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	_hitpoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+    // static const unsigned int defaultEnergyPoints = 50;
 	std::cout << "ScavTrap " << _name << " has appeared." << std::endl;
 }
 
@@ -69,22 +68,13 @@ bool ScavTrap::attack(std::string const & target)
 
 unsigned int	ScavTrap::getAttackDamage(void) const
 {
-    return _attackDamage;
+    return (this->_attackDamage);
 }
 
-unsigned int	ScavTrap::getEnergyPoints(void) const
-{
-    return _energyPoints;
-}
-
-unsigned int	ScavTrap::getHitpoints(void) const
-{
-    return _hitpoints;
-}
-
-void	ScavTrap::setAttackDamage(unsigned int amount)
+unsigned int	ScavTrap::setAttackDamage(unsigned int amount)
 {
     this->_attackDamage = amount;
+    return (this->_attackDamage);
 }
 
 void ScavTrap::guardGate(void)
