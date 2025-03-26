@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:54:15 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/03/25 21:03:42 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/03/26 19:22:27 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,23 @@ DiamondTrap::~DiamondTrap()
     std::cout << "[NEW] DiamondTrap " << this->_name << " has disappeared." << std::endl;
 }
 
-bool DiamondTrap::attack(std::string const & target)
-{
-    if (this->_hitpoints <= 0)
-    {
-        std::cout << "DiamondTrap " << this->_name << " is dead and cannot attack 🫠" << std::endl;
-        return (false);
-    }
-    else if (this->_energyPoints <= 0)
-    {
-        std::cout << "DiamondTrap " << this->_name << " has no energy left and cannot attack 😫" << std::endl;
-        return (false);
-    }
-    std::cout << "DiamondTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage." << std::endl;
-    this->_energyPoints -= 1;
-    std::cout << "DiamondTrap " << this->_name << " has " << this->_energyPoints << " energy points left." << std::endl;
-    return (true);
-}
+// bool DiamondTrap::attack(std::string const & target)
+// {
+//     if (this->_hitpoints <= 0)
+//     {
+//         std::cout << "DiamondTrap " << this->_name << " is dead and cannot attack 🫠" << std::endl;
+//         return (false);
+//     }
+//     else if (this->_energyPoints <= 0)
+//     {
+//         std::cout << "DiamondTrap " << this->_name << " has no energy left and cannot attack 😫" << std::endl;
+//         return (false);
+//     }
+//     std::cout << "DiamondTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage." << std::endl;
+//     this->_energyPoints -= 1;
+//     std::cout << "DiamondTrap " << this->_name << " has " << this->_energyPoints << " energy points left." << std::endl;
+//     return (true);
+// }
 
 void DiamondTrap::whoAmI(void)
 {
