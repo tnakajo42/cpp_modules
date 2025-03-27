@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:54:11 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/03/24 18:57:56 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:34:44 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ public:
 
     // bool ScavTrap::attack(std::string const & target);
     // bool ScavTrap::attack;
-    bool attack(std::string const & target);
+    // bool attack(std::string const & target);
     void whoAmI(void);
 };
