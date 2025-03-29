@@ -6,7 +6,7 @@
 /*   By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:22:50 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/03/29 15:31:47 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/03/29 20:41:05 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 	std::srand(std::time(NULL)); // Seed for random robotomy outcomes
 	std::cout << "\n___________________________A Pokémon Intern Adventure Begins...\n" << std::endl;
 
-	Bureaucrat	satoshi("Ash Ketchum", 10); // High rank
+	Bureaucrat	satoshi("Ash Ketchum", 1); // High rank
 	Bureaucrat	kasumi("Misty", 50);        // Mid-tier rank
 	Bureaucrat	takeshi("Brock", 150);      // Low rank
 
