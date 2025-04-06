@@ -6,14 +6,14 @@
 /*   By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:41:47 by tnakajo           #+#    #+#             */
-/*   Updated: 2025/04/06 12:29:12 by tnakajo          ###   ########.fr       */
+/*   Updated: 2025/04/06 15:39:56 by tnakajo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <stack>
 
-template <typename T>
+template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T>
 {
 public:

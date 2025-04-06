@@ -6,7 +6,7 @@
 #    By: tnakajo <tnakajo@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 16:14:37 by tnakajo           #+#    #+#              #
-#    Updated: 2025/04/06 12:34:23 by tnakajo          ###   ########.fr        #
+#    Updated: 2025/04/06 15:40:13 by tnakajo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ NAME = MutatedAdomination
 CC = c++
 RM = rm -rf
 
-SRCS = main.cpp
-# SRCS = main_test.cpp
+# SRCS = main.cpp
+SRCS = main_test.cpp
 HEADER = ./inc/MutantStack.hpp
 
 OBJ_DIR	= obj
-OBJS	= $(OBJ_DIR)/main.o
-# OBJS	= $(OBJ_DIR)/main_test.o
+# OBJS	= $(OBJ_DIR)/main.o
+OBJS	= $(OBJ_DIR)/main_test.o
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 # FLAGS	+= -g3 -fsanitize=address
